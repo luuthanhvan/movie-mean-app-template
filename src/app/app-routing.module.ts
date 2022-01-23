@@ -17,6 +17,17 @@ const routes: Routes = [
         path: 'movie',
         component: MovieComponent,
       },
+      {
+        path: 'movie/add',
+        loadChildren : () => import('./components/movie/add-movie/add-movie.module').then(m => m.AddMovieModule),
+      },
+      {
+        path: 'movie/edit',
+        loadChildren : () => import('./components/movie/edit-movie/edit-movie.module').then(m => m.EditMovieModule),
+      },
+      {
+				path: '**', redirectTo: '/admin', pathMatch: 'full', // for page not found
+			}
     ],
   }
 ];

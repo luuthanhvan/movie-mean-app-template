@@ -1,0 +1,18 @@
+.add-movie-btn, .edit-movie-btn {
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.add-movie-btn {
+  background-color: green;
+}
+
+.edit-movie-btn {
+  background-color: red;
+}
+
+.movie-card-containter {
+  max-width: 200px;
+  float: left;
+}
