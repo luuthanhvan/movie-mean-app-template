@@ -1,1 +1,48 @@
-<p>add-movie works!</p>
+<div class="add-movie-form-container">
+  <form [formGroup]="addMovieForm" (ngSubmit)="handleSubmitMovie(addMovieForm)">
+    <mat-form-field appearance="outline">
+      <mat-label>Movie name</mat-label>
+      <input matInput formControlName="movieName">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Genre</mat-label>
+      <mat-select formControlName="genre" multiple>
+        <!-- *ngFor: directive template -->
+        <mat-option *ngFor="let genre of genres" [value]="genre">{{genre}}</mat-option> 
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Running time</mat-label>
+      <input matInput formControlName="runningTime">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Release date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="releaseDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Cast</mat-label>
+      <input matInput formControlName="cast">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Director</mat-label>
+      <input matInput formControlName="director">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="status">
+        <mat-option value="released">Released</mat-option> 
+        <mat-option value="unreleased ">Unreleased </mat-option> 
+      </mat-select>
+    </mat-form-field>
+    
+    <button mat-button type="submit">Save</button>
+  </form>
+</div>
